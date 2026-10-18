@@ -1,5 +1,5 @@
-node_modules/
-dist/
-.sites-runtime/
-
-.openai/
+node_modules
+dist
+.DS_Store
+.env
+__pycache__

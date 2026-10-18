@@ -1,0 +1,45 @@
+:root{--red:#b3000f;--hot:#ff2a3a;--ink:#000;--bone:#fff}
+*{box-sizing:border-box;cursor:none}
+html,body,#root{margin:0;height:100%;overflow:hidden;background:#000;color:var(--bone);font-family:'IBM Plex Mono',monospace}
+.stage{position:fixed;inset:0;transition:filter .5s,transform .5s}
+.stage.dim{filter:blur(12px) brightness(.35);transform:scale(1.04)}
+.dist{font-family:'Special Elite',serif;text-shadow:3px 0 var(--hot),-2px 0 #fff4;animation:jit 2.4s steps(1) infinite}
+@keyframes jit{0%,92%{transform:none}93%{transform:translate(3px,-1px) skewX(4deg)}96%{transform:translate(-4px,1px)}}
+.hud{position:fixed;left:24px;top:20px;z-index:10;pointer-events:none;max-width:min(560px,80vw)}
+.hud h1{font-size:clamp(34px,6vw,76px);margin:0;line-height:.9}
+.hud p{margin:8px 0 0;font-size:12px;opacity:.75}
+.hint{position:fixed;left:24px;bottom:18px;z-index:10;font-size:12px;opacity:.7;pointer-events:none}
+.tag{pointer-events:none;white-space:nowrap;font:700 11px 'IBM Plex Mono';background:#000;color:#fff;padding:3px 7px;border:1px solid var(--hot);transform:rotate(-2deg)}
+.sharingan{position:fixed;left:0;top:0;width:80vmin;height:80vmin;margin:-40vmin 0 0 -40vmin;opacity:.1;pointer-events:none;mix-blend-mode:screen;z-index:5}
+.cursor{position:fixed;inset:0;z-index:100;pointer-events:none}
+.boot{position:fixed;inset:0;z-index:90;background:#000;display:grid;place-items:center}
+.boot.out{background:transparent;pointer-events:none}
+.eye{width:min(60vmin,420px);clip-path:ellipse(50% 38% at 50% 50%)}
+.boot p{position:absolute;bottom:12vh;font-size:12px;color:var(--hot);margin:0}
+.tile{position:absolute;background:#050001;border:1px solid #3a0006}
+.veil{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.45)}
+.panel{position:relative;width:min(820px,100%);max-height:88vh;overflow:auto;background:#050001;border:2px solid var(--hot);box-shadow:10px 10px 0 var(--red);padding:26px 28px;font-size:13px;line-height:1.6}
+.panel h2{font-size:clamp(26px,4vw,40px);margin:4px 0 14px;line-height:1}
+.panel .x{position:absolute;right:12px;top:10px;background:none;border:1px solid #fff;color:#fff;width:30px;height:30px;font:inherit}
+.kick{color:var(--hot)}
+.row{display:grid;grid-template-columns:200px 1fr 36px;gap:10px;align-items:center;margin:6px 0;font-size:12px}
+.bar{height:12px;background:var(--hot);transform-origin:left}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.box{border:1px solid #fff5;padding:10px}
+.box b{color:var(--hot)}
+.burn{position:relative;min-height:300px;margin-top:10px}
+.burn canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.btn{background:var(--red);color:#fff;border:2px solid #fff;padding:8px 14px;font:700 13px 'IBM Plex Mono';margin:6px 8px 6px 0}
+table{border-collapse:collapse;width:100%;font-size:12px}td,th{border:1px solid #fff4;padding:6px;text-align:left}
+@media(max-width:600px){.row{grid-template-columns:110px 1fr 30px}.panel{padding:18px}}
+@media(prefers-reduced-motion:reduce){.dist{animation:none}}
+.spot{z-index:30;align-items:start;padding-top:8vh}
+.q{width:100%;background:#000;border:2px solid #fff;color:#fff;padding:12px;font:700 16px 'IBM Plex Mono';margin-bottom:10px;cursor:text}
+.searchbtn{position:fixed;right:20px;top:18px;z-index:10}
+.nav-bar{position:fixed;top:16px;right:20px;z-index:15;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.nav-btn{background:#0d0002;color:#fff;border:1px solid var(--hot);padding:6px 11px;font:700 11px 'IBM Plex Mono';cursor:pointer;transition:all .2s}
+.nav-btn:hover,.nav-btn.active{background:var(--red);box-shadow:0 0 10px rgba(255,42,58,0.5)}
+input[type="range"]{-webkit-appearance:none;width:100%;height:6px;background:#2a0004;outline:none;border:1px solid var(--hot);margin:8px 0;cursor:pointer}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;background:var(--hot);cursor:pointer;border:1px solid #fff}
+.waterfall-bar{display:flex;height:26px;width:100%;margin:10px 0;border:1px solid #fff;overflow:hidden}
+.waterfall-seg{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:bold;color:#fff;padding:0 3px}
